@@ -18,6 +18,12 @@ pipeline {
                 sh 'make docker'
             }
         }
+        stage("docker-COMPOSE UP") {
+            steps {
+                echo " ============== start docker-compose =================="
+                sh 'docker-compose up -d'
+            }
+        }
         stage("docker push") {
             steps {
                 echo " ============== start pushing image =================="                
