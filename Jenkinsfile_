@@ -13,15 +13,16 @@ pipeline {
     }
     stages {
         
-        stage("create docker image") {
+       
+        stage("make test") {
             steps {
-                echo " ============== start building image =================="
-                sh 'make docker'
+                echo " ============== start test =================="
+                sh 'make test'
             }
         }
-        stage("docker image result") {
+        stage("Test result") {
             steps {
-                echo " ============== The Gitea image is built by Docker =================="                
+                echo " ============== All tests are passed ok =================="                
             }
         }
     }
