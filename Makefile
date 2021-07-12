@@ -690,13 +690,13 @@ node_modules: package-lock.json
 npm-update: node-check | node_modules
 	npx updates -cu
 	rm -rf node_modules package-lock.json
-	npm install --package-lock
+	npm install --package-lock --force
 	@touch node_modules
 
 .PHONY: fomantic
 fomantic:
 	rm -rf $(FOMANTIC_WORK_DIR)/build
-	cd $(FOMANTIC_WORK_DIR) && npm install --no-save
+	cd $(FOMANTIC_WORK_DIR) && npm install --no-save --force
 	cp -f $(FOMANTIC_WORK_DIR)/theme.config.less $(FOMANTIC_WORK_DIR)/node_modules/fomantic-ui/src/theme.config
 	cp -rf $(FOMANTIC_WORK_DIR)/_site $(FOMANTIC_WORK_DIR)/node_modules/fomantic-ui/src/
 	cd $(FOMANTIC_WORK_DIR) && npx gulp -f node_modules/fomantic-ui/gulpfile.js build
