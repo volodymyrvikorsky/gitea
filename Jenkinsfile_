@@ -6,6 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
+    tools {nodejs "nodejs"}
     triggers { pollSCM('H * * * *') }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
