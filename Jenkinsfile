@@ -12,16 +12,17 @@ pipeline {
         timestamps()
     }
     stages {
-        stage("make test") {
-            steps {
-                echo " ============== start test =================="
-                sh 'make test'
-            }
-        }
+        
         stage("create docker image") {
             steps {
                 echo " ============== start building image =================="
                 sh 'make docker'
+            }
+        }
+        stage("make test") {
+            steps {
+                echo " ============== start test =================="
+                sh 'make test'
             }
         }
         stage("docker image result") {
