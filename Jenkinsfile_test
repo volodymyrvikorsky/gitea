@@ -1,5 +1,5 @@
 #!groovy
-// Run docker test
+// Run make test
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -13,9 +13,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {
-        
-       
+    stages {              
         stage("make test") {
             steps {
                 echo " ============== start test =================="
