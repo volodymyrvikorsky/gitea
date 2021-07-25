@@ -1,4 +1,3 @@
-#!groovy
 // Run make test
 properties([disableConcurrentBuilds()])
 
