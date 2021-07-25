@@ -25,7 +25,7 @@ phases:
     #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
     runtime-versions:
       nodejs: 12
-      golang: 1.14
+      golang: 1.13
     #commands:
       # - command
       # - command
