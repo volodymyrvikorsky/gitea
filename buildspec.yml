@@ -38,7 +38,9 @@ phases:
       # - command
   build:
     commands:
-      - make build
+      - make frontend
+      - pwd
+      - make backend
       # - command
   #post_build:
     #commands:
