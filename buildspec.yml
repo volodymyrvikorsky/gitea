@@ -39,8 +39,9 @@ phases:
     commands:
       - make build
       - pwd
+      - cd ..
       - mkdir deploy
-      - cp -a . deploy
+      - cp -a ./ deploy
             # - command
   #post_build:
     #commands:
