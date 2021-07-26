@@ -38,9 +38,8 @@ phases:
       # - command
   build:
     commands:
-      - make frontend
+      - make build
       - pwd
-      - make backend
       # - command
   #post_build:
     #commands:
@@ -56,7 +55,7 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-      - './gitea'
+      - '**/*'
     # - location
   #name: $(date +%Y-%m-%d)
   #discard-paths: yes
