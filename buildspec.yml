@@ -39,15 +39,15 @@ phases:
     commands:
       - make build
       - pwd
-      - mkdir build-output
-      - find . -type d -name public -exec cp -R {} build-output \;
-      - find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
+      #- mkdir build-output
+      #- find . -type d -name public -exec cp -R {} build-output \;
+      #- find . -mindepth 1 -name build-output -prune -o -exec rm -rf {} +
       # - command
-  post_build:
-    commands:
-      - mv build-output/**/* ./
-      - mv build-output/* ./
-      - rm -R build-output
+  #post_build:
+  #  commands:
+  #    - mv build-output/**/* ./
+  #    - mv build-output/* ./
+  #    - rm -R build-output
   #post_build:
     #commands:
       # - command
@@ -65,7 +65,7 @@ artifacts:
       - '**/*'
     # - location
   #name: $(date +%Y-%m-%d)
-  #discard-paths: yes
+  discard-paths: yes
   #base-directory: location
 #cache:
   #paths:
