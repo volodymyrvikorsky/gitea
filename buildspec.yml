@@ -37,8 +37,9 @@ phases:
       # - command
   build:
     commands:
-      - make build
+      #- make build
       - make frontend
+      - make backend
       - pwd
       #- mkdir build-output
       #- find . -type d -name public -exec cp -R {} build-output \;
