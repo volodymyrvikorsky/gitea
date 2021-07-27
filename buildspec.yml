@@ -65,8 +65,8 @@ artifacts:
   files:
       - '**/*'
     # - location
-  name: gitea-$(date +%Y-%m-%d)
-  discard-paths: yes
+# name: gitea-$(date +%Y-%m-%d)
+#  discard-paths: yes
   #base-directory: location
 #cache:
   #paths:
