@@ -33,7 +33,7 @@ phases:
     commands:
       - make -v 
       - node -v
-      - npm install      
+      - npm install -g npm     
       # - command
   build:
     commands:
@@ -64,7 +64,7 @@ artifacts:
   files:
       - '**/*'
     # - location
-  #name: $(date +%Y-%m-%d)
+  name: gitea-$(date +%Y-%m-%d)
   discard-paths: yes
   #base-directory: location
 #cache:
