@@ -63,11 +63,11 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-      - '**/*'
+      - './**/*'
     # - location
-# name: gitea-$(date +%Y-%m-%d)
+  name: gitea-$(date +%Y-%m-%d)
 #  discard-paths: yes
-  #base-directory: location
+  base-directory: public
 #cache:
   #paths:
     # - paths
