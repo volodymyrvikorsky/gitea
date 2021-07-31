@@ -8,8 +8,7 @@ version: 0.2
   #secrets-manager:
      # key: secret-id:json-key:version-stage:version-id
   #exported-variables:
-     # - variable
-     # - variable
+     # - variable     
   #git-credential-helper: yes
 #batch:
   #fast-fail: true
