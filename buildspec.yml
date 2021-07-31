@@ -25,7 +25,7 @@ phases:
     #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
     runtime-versions:
       nodejs: 14
-      golang: 1.14
+      golang: 1.15
     #commands:
       # - command
       # - command
@@ -38,8 +38,10 @@ phases:
       # - command
   build:
     commands:
-      - make build
+      - TAGS="bindata" make build
       - pwd
+      - cd gitea
+      - ls -la
       # - command
   #post_build:
   #  commands:
@@ -60,7 +62,7 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-      - '**/*'
+      - './gitea/gitea'
     # - location
 #  name: gitea-$(date +%Y-%m-%d)
 #  discard-paths: yes
