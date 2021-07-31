@@ -7,7 +7,6 @@ version: 0.2
      # key: "value"    
   #secrets-manager:
      # key: secret-id:json-key:version-stage:version-id
-     # key: secret-id:json-key:version-stage:version-id
   #exported-variables:
      # - variable
      # - variable
