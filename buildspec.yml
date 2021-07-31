@@ -41,8 +41,9 @@ phases:
       - cd gitea
       - ls -la
       - mv gitea application
-      - sudo chmod 777 application 
+      - chmod 777 application 
       - zip application.zip application go.mod Procfile
+      - ls -la
       # - command
   #post_build:
   #  commands:
