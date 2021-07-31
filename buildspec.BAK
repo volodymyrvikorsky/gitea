@@ -40,9 +40,6 @@ phases:
       - pwd
       - cd gitea
       - ls -la
-      - mv gitea application
-      - sudo chmod 777 application 
-      - zip application.zip application go.mod Procfile
       # - command
   #post_build:
   #  commands:
@@ -63,7 +60,7 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-      - './gitea/application.zip'
+      - './gitea/gitea'
     # - location
 #  name: gitea-$(date +%Y-%m-%d)
 #  discard-paths: yes
