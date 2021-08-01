@@ -3,12 +3,16 @@ version: 0.2
 #env:
   #variables:
      # key: "value"
+     # key: "value"
   #parameter-store:
-     # key: "value"    
+     # key: "value"
+     # key: "value"
   #secrets-manager:
      # key: secret-id:json-key:version-stage:version-id
+     # key: secret-id:json-key:version-stage:version-id
   #exported-variables:
-     # - variable     
+     # - variable
+     # - variable
   #git-credential-helper: yes
 #batch:
   #fast-fail: true
@@ -34,13 +38,18 @@ phases:
       # - command
   build:
     commands:
+#      - make test 
       - TAGS="bindata" make build
       - pwd
+  #    - cp go.mod ./gitea/go.mod
+  #    - cp Procfile ./gitea/Procfile
       - cd gitea
-      - ls -la
+    #  - ls -la
       - mv gitea application
       - chmod 777 application 
-      - zip application.zip application go.mod Procfile
+      - cd .. 
+      - cp ./gitea/application application
+      #- zip application.zip application go.mod Procfile
       - ls -la
       # - command
   #post_build:
@@ -62,7 +71,10 @@ phases:
     #file-format: JunitXml | CucumberJson
 artifacts:
   files:
-      - './gitea/application.zip'
+      #- './gitea/application.zip'
+      - './application'
+      - './go.mod'
+      - './Procfile' 
     # - location
 #  name: gitea-$(date +%Y-%m-%d)
 #  discard-paths: yes
