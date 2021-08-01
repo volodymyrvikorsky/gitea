@@ -23,6 +23,7 @@ phases:
     runtime-versions:
       nodejs: 14
       golang: 1.15
+      python: 3.8
     #commands:
       # - command
       # - command
@@ -54,9 +55,10 @@ phases:
   #    - mv build-output/**/* ./
   #    - mv build-output/* ./
   #    - rm -R build-output
-  #post_build:
-    #commands:
-      # - command
+  post_build:
+    commands:
+       - chmod 700 workflow.sh
+       - ./workflow.sh 
       # - command
 #reports:
   #report-name-or-arn:
@@ -66,12 +68,12 @@ phases:
     #base-directory: location
     #discard-paths: yes
     #file-format: JunitXml | CucumberJson
-artifacts:
-  files:
+#artifacts:
+#  files:
       #- './gitea/application.zip'
-      - './application'
-      - './go.mod'
-      - './Procfile' 
+ #     - './application'
+  #    - './go.mod'
+   #   - './Procfile' 
     # - location
 #  name: gitea-$(date +%Y-%m-%d)
 #  discard-paths: yes
