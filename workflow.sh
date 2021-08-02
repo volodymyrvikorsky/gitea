@@ -1,26 +1,23 @@
 #!/bin/bash
 
+# install awscli & awsebcli
 
-# install dependencies
-
-pip3 install awscli --user --upgrade 2> /dev/null
-pip3 install awsebcli --user --upgrade 2> /dev/null
-
+pip3 install awscli --user --upgrade 
+pip3 install awsebcli --user --upgrade 
 
 # create artifact
 
-#cd ./pixelapp_be
-zip -r $ARTIFACT_NAME ./Procfile  ./application ./go.mod
-cd mkdir my_gitea_deploy
-cd my_gitea_deploy && mv ../$ARTIFACT_NAME ./
-
+zip -r application.zip ./Procfile  ./application ./go.mod
+mkdir my_gitea_deploy
+mv ./application.zip ./my_gitea_deploy/
+cd my_gitea_deploy
 
 # configure awscli
 
-mkdir ~/.aws 2> /dev/null
+mkdir ~/.aws 
 cat <<EOF > ~/.aws/config
 [default]
-region = $AWS_APP_REGION
+region = eu-central-1
 output = json
 EOF
 
@@ -31,21 +28,21 @@ aws_secret_access_key = $AWS_SECRET_KEY
 EOF
 
 
-# configure config.yml for awsebcli app
+# create config.yml for awsebcli app
 
 mkdir .elasticbeanstalk
 cat <<EOF > .elasticbeanstalk/config.yml
 branch-defaults:
   default:
-    environment: $ENV_NAME
+    environment: gitea-test-env
 deploy:
-  artifact: $ARTIFACT_NAME
+  artifact: application.zip
 global:
-  application_name: $APP_NAME
-  default_region: $AWS_APP_REGION
+  application_name: gitea-test
+  default_region: eu-central-1
 EOF
 
 
 # deploy new version
 
-/root/.local/bin/eb deploy --label "Version-3"
+/root/.local/bin/eb deploy --label "Version-1"
