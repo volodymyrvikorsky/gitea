@@ -45,4 +45,4 @@ EOF
 
 # deploy artifact to beanstalk
 
-/root/.local/bin/eb deploy #--label "Version-1"
+/root/.local/bin/eb deploy 
