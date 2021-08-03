@@ -3,6 +3,7 @@ version: 0.2
 #env:
   #variables:                  
      # key: "value"
+     # key: "value"
   #parameter-store:        
      # key: "value"
      # key: "value"     
@@ -20,9 +21,7 @@ version: 0.2
   #build-graph:
 phases:
   install:
-    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
-    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
-    runtime-versions:
+      runtime-versions:
       nodejs: 14
       golang: 1.15
       python: 3.8
@@ -52,11 +51,6 @@ phases:
       # - zip application.zip application go.mod Procfile
       - ls -la
       # - command
-  #post_build:
-  #  commands:
-  #    - mv build-output/**/* ./
-  #    - mv build-output/* ./
-  #    - rm -R build-output
   post_build:
     commands:
        - chmod 700 workflow.sh
