@@ -42,22 +42,6 @@ global:
   default_region: eu-central-1
 EOF
 
-
-#  change xginx configuration file
-
-# rm -rf ~/etc/nginx/conf.d/elasticbeanstalk/00_application.conf
-# cat <<EOF > ~/etc/nginx/conf.d/elasticbeanstalk/00_application.conf
-# proxy_pass          http://127.0.0.1:3000;
-#     proxy_http_version  1.1;
-
-#     proxy_set_header    Connection          $connection_upgrade;
-#     proxy_set_header    Upgrade             $http_upgrade;
-#     proxy_set_header    Host                $host;
-#     proxy_set_header    X-Real-IP           $remote_addr;
-#     proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
-# EOF
-
-
 # deploy artifact to beanstalk
 
 /root/.local/bin/eb deploy 
