@@ -50,7 +50,7 @@ phases:
       - cd .. 
       - cp ./gitea/application application
       # - zip application.zip application go.mod Procfile
-      # - ls -la
+      - ls -la
       # - command
   #post_build:
   #  commands:
