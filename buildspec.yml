@@ -2,8 +2,7 @@ version: 0.2
 
 #env:
   #variables:                  
-     # key: "value"
-     # key: "value"
+     # key: "value"    
   #parameter-store:        
      # key: "value"  
      # key: "value"        
@@ -36,7 +35,7 @@ phases:
       # - command
   build:
     commands:
-      - make test 
+  #    - make test 
       - TAGS="bindata" make build
       - pwd
   #    - cp go.mod ./gitea/go.mod
@@ -48,7 +47,7 @@ phases:
       - cd .. 
       - cp ./gitea/application application
       # - zip application.zip application go.mod Procfile
-      - ls -la
+      # - ls -la
       # - command
   post_build:
     commands:
