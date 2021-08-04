@@ -24,9 +24,7 @@ phases:
     runtime-versions:
       nodejs: 14
       golang: 1.15
-      python: 3.8
-    #commands:
-      # - command      
+      python: 3.8       
   pre_build:
     commands:
       - make -v 
