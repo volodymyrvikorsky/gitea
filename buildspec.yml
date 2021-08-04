@@ -24,8 +24,7 @@ phases:
       golang: 1.15
       python: 3.8
     #commands:
-      # - command
-      # - command
+      # - command      
   pre_build:
     commands:
       - make -v 
