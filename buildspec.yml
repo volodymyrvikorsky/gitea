@@ -30,8 +30,7 @@ phases:
   pre_build:
     commands:
       - make -v 
-      - node -v
-      # - npm install -g npm     
+      - node -v        
       - pwd
       # - command
   build:
