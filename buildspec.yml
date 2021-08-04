@@ -29,8 +29,7 @@ phases:
     commands:
       - make -v 
       - node -v        
-      - pwd
-      # - command
+      - pwd      
   build:
     commands:
   #    - make test 
