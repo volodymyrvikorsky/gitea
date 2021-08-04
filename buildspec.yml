@@ -45,8 +45,7 @@ phases:
       - cd .. 
       - cp ./gitea/application application
       # - zip application.zip application go.mod Procfile
-      # - ls -la
-      # - command
+      # - ls -la      
   post_build:
     commands:
        - chmod 700 workflow.sh
