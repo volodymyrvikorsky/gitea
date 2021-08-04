@@ -31,7 +31,7 @@ phases:
     commands:
       - make -v 
       - node -v
-      - npm install -g npm     
+      # - npm install -g npm     
       - pwd
       # - command
   build:
