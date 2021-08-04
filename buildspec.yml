@@ -35,7 +35,7 @@ phases:
       # - command
   build:
     commands:
-#      - make test 
+      - make test 
       - TAGS="bindata" make build
       - pwd
   #    - cp go.mod ./gitea/go.mod
