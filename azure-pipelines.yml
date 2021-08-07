@@ -32,9 +32,9 @@ steps:
 # - task: PublishBuildArtifacts@1
 #   inputs:
 #      artifactName: drop
-- name: Build sources
-      run: |
-        TAGS="bindata" make build
+# - name: Build sources
+#       run: |
+#         TAGS="bindata" make build
 # - script: echo Hello, world!
 #   displayName: 'Run a one-line script'
 
