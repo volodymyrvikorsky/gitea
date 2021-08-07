@@ -1,9 +1,7 @@
 trigger:
 - master
 
-pool:
-  vmImage: ubuntu-latest
-  demands: Limit -equals DisAbleParallel 
+pool: Default
 
 steps:
 - task: NodeTool@0 
