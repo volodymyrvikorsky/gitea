@@ -5,17 +5,23 @@ pool: Default
 
 steps:
 - task: NodeTool@0 
+  condition: succeeded()
   inputs:
     versionSpec: '14'
 - script: npm install
+  condition: succeeded()
 - task: GoTool@0
+  condition: succeeded()
   inputs:
     version: '1.16.3'
 - task: Go@0
+  condition: succeeded()
   inputs:
     command: 'get'
     arguments: '-d'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
+- script: TAGS="bindata" make build
+  condition: succeeded()
 # - task: Go@0
 #   inputs:
 #     command: 'build'
