@@ -41,7 +41,6 @@ steps:
      publishWebProjects: false
      zipAfterPublish: true
   condition: succeeded()
-xv
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifact: gitea'
   inputs:
