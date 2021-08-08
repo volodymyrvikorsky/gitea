@@ -25,27 +25,35 @@ steps:
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildID), $(Build.BuildNumber)" > buildinfo.txt'
   displayName: 'Write build info'
   workingDirectory: '$(System.DefaultWorkingDirectory)'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)' # Required 
+    artifactName: 'gitea' # Optional
+    artifactType: 'pipeline' # Required. Options: pipeline, filepath. Default value: pipeline
+    fileSharePath: '\server\folderName' # Required when artifactType = filepath
+    #parallel: false # Optional. Default value: false
+    #parallelCount: 1 # Optional. Value must be at least 1 and not greater than 128. Default value: 8  
 #   inputs:
 #     command: 'build'
 #     workingDirectory: '$(System.DefaultWorkingDirectory)'
-- task: CopyFiles@2
-  inputs:
-    sourceFolder: '$(Build.SourcesDirectory)'
-    contents: 'gitea'
-    targetFolder: '$(Build.ArtifactStagingDirectory)'
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish artifact: gitea'
-  inputs:
-     command: 'pbulish'
-     projects: './gitea'
-     publishWebProjects: false
-     zipAfterPublish: true
-  condition: succeeded()
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish artifact: gitea'
-  inputs:
-     artifactName: gitea
-  condition: succeeded()
+# - task: CopyFiles@2
+#   inputs:
+#     sourceFolder: '$(Build.SourcesDirectory)'
+#     contents: 'gitea'
+#     targetFolder: '$(Build.ArtifactStagingDirectory)'
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish artifact: gitea'
+#   inputs:
+#      command: 'pbulish'
+#      projects: './gitea'
+#      publishWebProjects: false
+#      zipAfterPublish: true
+#   condition: succeeded()
+# - task: PublishBuildArtifacts@1
+#   displayName: 'Publish artifact: gitea'
+#   inputs:
+#      artifactName: gitea
+#   condition: succeeded()
 # - name: Build sources
 #       run: |
 #         TAGS="bindata" make build
