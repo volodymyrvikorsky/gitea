@@ -1,7 +1,7 @@
 trigger:
 - master
 
-pool: Azure Pipelines
+pool: Default
 
 steps:
 - task: NodeTool@0 
