@@ -22,7 +22,9 @@ steps:
     workingDirectory: '$(System.DefaultWorkingDirectory)'
 - script: TAGS="bindata" make build
   condition: succeeded()
-# - task: Go@0
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildID), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Write build info'
+  workingDirectory: '$(System.DefaultWorkingDirectory)'
 #   inputs:
 #     command: 'build'
 #     workingDirectory: '$(System.DefaultWorkingDirectory)'
@@ -32,8 +34,19 @@ steps:
     contents: 'gitea'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: PublishBuildArtifacts@1
+  displayName: 'Publish artifact: gitea'
+  inputs:
+     command: 'pbulish'
+     projects: './gitea'
+     publishWebProjects: false
+     zipAfterPublish: true
+  condition: succeeded()
+xv
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish artifact: gitea'
   inputs:
      artifactName: gitea
+  condition: succeeded()
 # - name: Build sources
 #       run: |
 #         TAGS="bindata" make build
