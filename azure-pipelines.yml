@@ -20,7 +20,7 @@ steps:
     command: 'get'
     arguments: '-d'
     workingDirectory: '$(System.DefaultWorkingDirectory)'
-- script: make build
+- script: TAGS="bindata" make build
   condition: succeeded()
 # - task: Go@0
 #   inputs:
