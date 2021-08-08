@@ -27,7 +27,7 @@ steps:
   workingDirectory: '$(System.DefaultWorkingDirectory)'
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '~/agent/_work/1/s/gitea/' # Required 
+    targetPath: '/gitea' # Required 
     artifactName: 'gitea' # Optional
     artifactType: 'pipeline' # Required. Options: pipeline, filepath. Default value: pipeline
     fileSharePath: '\server\folderName' # Required when artifactType = filepath
