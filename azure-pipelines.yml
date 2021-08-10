@@ -1,5 +1,5 @@
 trigger:
-- task: AzureRmWebAppDeployment@1
+- task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Azure subscription 1(22b94ef5-f054-497b-aba4-37d0220d4c5d)'
