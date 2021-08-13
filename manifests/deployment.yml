@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: volodymyrvikorskygitea 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: volodymyrvikorskygitea
+  template:
+    metadata:
+      labels:
+        app: volodymyrvikorskygitea 
+    spec:
+      containers:
+        - name: volodymyrvikorskygitea 
+          image: gitearegistry.azurecr.io/volodymyrvikorskygitea
+          ports:
+          - containerPort: 22
