@@ -5,6 +5,8 @@
 trigger:
 - master
 
+pool: Default
+
 resources:
 - repo: self
 
