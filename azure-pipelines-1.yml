@@ -8,8 +8,8 @@ trigger:
 
 pool: Default
 
-resources:
-- repo: self
+# resources:
+# - repo: self
 
 variables:
 
