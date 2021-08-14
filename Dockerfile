@@ -60,6 +60,8 @@ ENV GITEA_CUSTOM /data/gitea
 
 VOLUME ["/data"]
 
+RUN chmod +x /usr/bin/entrypoint
+
 ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 

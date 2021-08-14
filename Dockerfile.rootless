@@ -68,6 +68,7 @@ ENV HOME "/var/lib/gitea/git"
 VOLUME ["/var/lib/gitea", "/etc/gitea"]
 WORKDIR /var/lib/gitea
 
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["bash", "/usr/local/bin/docker-entrypoint.sh"]
 CMD []
 
