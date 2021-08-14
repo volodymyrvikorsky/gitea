@@ -62,7 +62,7 @@ VOLUME ["/data"]
 
 #RUN chmod +x /usr/bin/entrypoint
 
-ENTRYPOINT ["/usr/bin/entrypoint"]
+ENTRYPOINT ["/usr/local/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
 
 COPY docker/root /
