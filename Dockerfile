@@ -60,10 +60,10 @@ ENV GITEA_CUSTOM /data/gitea
 
 VOLUME ["/data"]
 
-#RUN chmod +x /usr/bin/entrypoint
-
-ENTRYPOINT ["/usr/local/bin/entrypoint"]
+ENTRYPOINT ["/usr/bin/entrypoint"]
 CMD ["/bin/s6-svscan", "/etc/s6"]
+
+RUN chmod +x /usr/bin/entrypoint
 
 COPY docker/root /
 COPY --from=build-env /go/src/code.gitea.io/gitea/gitea /app/gitea/gitea
