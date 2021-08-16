@@ -16,5 +16,5 @@ spec:
         - name: volodymyrvikorskygitea 
           image: gitearegistry.azurecr.io/volodymyrvikorskygitea
           ports:
-          - containerPort: 22
+          #- containerPort: 22
           - containerPort: 3000
